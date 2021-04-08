@@ -5,5 +5,12 @@
 </template>
 
 <style lang="scss">
-
+  #app {
+    .no-wap {
+      display: none;
+    }
+    .no-web {
+      display: none;
+    } 
+  }
 </style>

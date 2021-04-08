@@ -1,5 +1,8 @@
 <template>
-    <div class=''>移动端 home</div>
+<!-- 首页 -->
+    <div class=''>
+        pc首页
+    </div>
 </template>
 
 <script>

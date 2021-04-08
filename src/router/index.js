@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import { Web } from './web'
+import { Wap} from './wap' 
+
 import { _isMobile } from '@/assets/js/utils'
 
 
@@ -11,15 +14,15 @@ const redirtectPath = _isMobile() ? 'wap' : 'web'
 const routes = [
   {
     path: '/web',
-    name: 'web',
-    component: ()=>import('@/views/web'),
-    meta:{type: 'web'}
+    component: ()=>import('@/views/web/index.vue'),
+    meta:{type: 'web'},
+    children: Web
   },
   {
     path: '/wap',
-    name: 'wap',
     component: ()=>import('@/views/wap/'),
-    meta:{type: 'wap'}
+    meta:{type: 'wap'},
+    children: Wap
   },
   {
     path: '/',
@@ -39,7 +42,6 @@ const router = new VueRouter({
  * 路由守卫-请求前拦截
  */
 router.beforeEach((to, from, next)=>{
-  console.log('to', to)
   if(_isMobile() && to.meta.type !== 'wap'){
     next('/wap')
   }
