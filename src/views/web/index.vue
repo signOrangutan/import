@@ -26,6 +26,6 @@
 </script>
 <style lang='scss'>
     .web-home {
-        
+        overflow-x: auto;
     }
 </style>
