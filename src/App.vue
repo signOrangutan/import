@@ -1,16 +1,19 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <v-app>
+    <router-view /> 
+  </v-app>
 </template>
 
-<style lang="scss">
-  #app {
-    .no-wap {
-      display: none;
-    }
-    .no-web {
-      display: none;
-    } 
-  }
-</style>
+<script>
+
+export default {
+  name: 'App',
+
+  components: {
+  },
+
+  data: () => ({
+    //
+  })
+}
+</script>

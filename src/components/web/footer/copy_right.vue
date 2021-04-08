@@ -12,13 +12,13 @@
 </template>
 
 <script>
-    export default {
-        data: function(){
-            return {
-                copyRight: ' Copyright 2019-2020 报告易版权所有   川ICP备19002436号-5'
-            }
-        }
+export default {
+  data: function () {
+    return {
+      copyRight: ' Copyright 2019-2020 报告易版权所有   川ICP备19002436号-5'
     }
+  }
+}
 </script>
 <style lang='scss'>
     .com-copy-right {

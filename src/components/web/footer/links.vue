@@ -9,21 +9,21 @@
 </template>
 
 <script>
-    export default {
-        name: 'Links',
-        data: function(){
-            return {
-                links: [
-                    {name: '知识付费系统', uri: ''},
-                    {name: '直播授课系统', uri: ''},
-                    {name: '网络高清直播系统', uri: ''},
-                    {name: '付费直播平台', uri: ''},
-                    {name: '网上讲课软件', uri: ''},
-                    {name: '知识付费平台', uri: ''},
-                ]
-            }
-        }
+export default {
+  name: 'Links',
+  data: function () {
+    return {
+      links: [
+        { name: '知识付费系统', uri: '' },
+        { name: '直播授课系统', uri: '' },
+        { name: '网络高清直播系统', uri: '' },
+        { name: '付费直播平台', uri: '' },
+        { name: '网上讲课软件', uri: '' },
+        { name: '知识付费平台', uri: '' }
+      ]
     }
+  }
+}
 </script>
 <style lang='scss'>
     .com-links {

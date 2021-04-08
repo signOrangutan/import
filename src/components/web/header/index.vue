@@ -9,8 +9,7 @@
                 <span class="content">享受高品质咨询服务</span>
             </p>
         </div>
-        
-        
+
         <!-- 内容 -->
         <slot name="content">
         </slot>
@@ -19,14 +18,14 @@
 </template>
 
 <script>
-    export default {
-        name: "Header",
-        data:function(){
-            return {
-                
-            }
-        }
+export default {
+  name: 'Header',
+  data: function () {
+    return {
+
     }
+  }
+}
 </script>
 <style lang='scss'>
     .com-header {
@@ -53,7 +52,6 @@
             }
         }
 
-        
         .btn-login {
             width: 88px;
         }

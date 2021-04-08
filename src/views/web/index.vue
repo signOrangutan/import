@@ -10,19 +10,19 @@
 </template>
 
 <script>
-    import Header from '@/components/web/header'
-    import Nav from '@/components/web/header/navigation'
-    import Footer from '@/components/web/footer'
-    export default {
-        components:{
-            Header,
-            Nav,
-            Footer
-        },
-        data: function(){
-            return {}
-        }
-    }
+import Header from '@/components/web/header'
+import Nav from '@/components/web/header/navigation'
+import Footer from '@/components/web/footer'
+export default {
+  components: {
+    Header,
+    Nav,
+    Footer
+  },
+  data: function () {
+    return {}
+  }
+}
 </script>
 <style lang='scss'>
     .web-home {
