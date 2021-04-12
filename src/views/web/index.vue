@@ -2,7 +2,7 @@
 <!-- pc主页 -->
     <div class='web-home'>
         <Header>
-            <Nav slot="content"></Nav>
+            <Nav class="nav" slot="content"></Nav>
         </Header>
         <router-view />
         <Footer></Footer>
@@ -26,6 +26,6 @@ export default {
 </script>
 <style lang='scss'>
     .web-home {
-        overflow-x: auto;
+      overflow-x: auto;
     }
 </style>

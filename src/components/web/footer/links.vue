@@ -35,7 +35,6 @@ export default {
         border-bottom: 1px solid #E5E5E5;
         line-height: 2.25;
 
-        margin-bottom: 30px;
         .item {
             margin-right: 20px;
         }

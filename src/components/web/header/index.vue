@@ -9,11 +9,17 @@
                 <span class="content">享受高品质咨询服务</span>
             </p>
         </div>
-
         <!-- 内容 -->
         <slot name="content">
+            <div class="header-content"></div>
         </slot>
-        <div class="btn-login">登录注册</div>
+        <div class="header-right">
+            <v-btn color="primary" small>登录注册</v-btn>
+        </div>
+        
+
+        
+        
     </div>
 </template>
 
@@ -29,11 +35,16 @@ export default {
 </script>
 <style lang='scss'>
     .com-header {
+        overflow-x: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
 
         .header-left{
-            margin-left: 30px;
             display: flex;
-            align-items: center;
+            margin-right: 20px;
+            
             .logo {
                 width: 136px;
                 height: 32px;
@@ -44,6 +55,7 @@ export default {
             .top-text {
                 display: flex;
                 flex-direction: column;
+                margin-bottom: 0;
                 .content {
                     font-size: 14px;
                     line-height: 1.1;
@@ -51,9 +63,10 @@ export default {
                 }
             }
         }
-
-        .btn-login {
-            width: 88px;
+        .header-right {
+            margin-left: auto;
+            
         }
+        
     }
 </style>

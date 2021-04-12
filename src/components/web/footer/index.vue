@@ -2,12 +2,10 @@
     <!-- 组件-页脚 -->
     <div class='com-footer'>
         <div class="footer-container">
-
-            <Nav class="footer-nav"></Nav>
-            <About></About>
-            <Links></Links>
+            <Nav class="nav"></Nav>
+            <About class="about"></About>
+            <Links class="links"></Links>
             <CopyRight></CopyRight>
-
         </div>
     </div>
 </template>
@@ -32,16 +30,18 @@ export default {
 </script>
 <style lang='scss'>
     .com-footer{
-        padding-top: 50px;
-        width: inherit;
         background-color: $footer-bg-color;
-        width: 1920px;
         .footer-container {
-            min-width: 1200px;
+            max-width: 1200px;
             margin:0 auto;
-            // .footer-nav {
-            //     margin: 0 auto;
-            // }
+            
+            .nav {
+              margin-bottom: 30px;
+              border-bottom: 1px solid #E5E5E5;
+            }
+            .links {
+              margin-bottom: 10px;
+            }
         }
 
     }

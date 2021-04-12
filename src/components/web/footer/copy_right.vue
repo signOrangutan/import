@@ -2,7 +2,7 @@
     <div class='com-copy-right'>
         <div class="content">
             <span class="icon"></span>
-            <span class="info">{{copyRight}}</span>
+            <span class="info_">{{copyRight}}</span>
         </div>
         <div class="network-allow">
             <span class="icon-cnnic"></span>
@@ -33,7 +33,7 @@ export default {
                 height: 17px;
                 background: url('../../../assets/img/foot-icp.png') center/cover no-repeat;
             }
-            .info{
+            .info_{
                 font-size: 14px;
                 line-height: 1.5;
                 vertical-align: middle;

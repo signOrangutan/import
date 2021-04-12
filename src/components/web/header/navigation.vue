@@ -16,14 +16,14 @@ export default {
   data: function () {
     return {
       navs: [
-        { name: '首页', select: false },
-        { name: '报告生成', select: false },
-        { name: '定制服务', select: false },
-        { name: '投资人对接', select: false },
-        { name: '案例展示', select: false },
-        { name: '评论反馈', select: false },
-        { name: '行业资讯', select: false },
-        { name: '关于我们', select: false }
+        { name: '首页', select: false, path: "/web"},
+        { name: '报告生成', select: false, path: "/web/report"},
+        { name: '定制服务', select: false, path: "/web/service" },
+        { name: '投资人对接', select: false, path: "/web/investor" },
+        { name: '案例展示', select: false, path: "/web/case" },
+        { name: '评论反馈', select: false, path: "/web/comment" },
+        { name: '行业资讯', select: false, path: "/web/news" },
+        { name: '关于我们', select: false, path: "/web/about"}
       ]
     }
   },
@@ -36,6 +36,8 @@ export default {
           item.select = false
         }
       })
+
+      this.$router.push(nav.path)
     }
   }
 }
@@ -43,11 +45,10 @@ export default {
 <style lang='scss'>
     .com-nav {
         max-width: 1200px;
-        margin: 0 auto;
         display: flex;
-        justify-items: center;
-        align-items: center;
-
+        // align-items: center;
+        font-size: 18px;
+        line-height: 3.9;
         .nav-item {
             margin-right: $nav-gap;
         }

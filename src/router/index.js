@@ -13,7 +13,7 @@ const redirtectPath = _isMobile() ? 'wap' : 'web'
 const routes = [
   {
     path: '/web',
-    component: () => import('@/views/web/index.vue'),
+    component: () => import('@/views/web/'),
     meta: { type: 'web' },
     children: Web
   },
@@ -34,6 +34,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// 重复路由 异常捕获
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 
 /**
  * 路由守卫-请求前拦截
