@@ -76,6 +76,20 @@
                     margin-right: 30px;
                     
                 }
+                .contxt {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: -26px;
+                        display: inline-block;
+                        width: 26px;
+                        height: 13px;
+                        background: url('../../../../assets/img/28.png') center/cover no-repeat;
+                    }
+                }
             }
         }
     }

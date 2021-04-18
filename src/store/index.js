@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    token: ''
   },
   mutations: {
+    changeToken: function(state, plyload){
+      state.token = plyload
+    }
   },
   actions: {
   },

@@ -14,19 +14,19 @@
             <div class="header-content"></div>
         </slot>
         <div class="header-right">
-            <v-btn color="primary" small>登录注册</v-btn>
+            <login></login>
         </div>
-        
-
-        
-        
     </div>
 </template>
 
 <script>
+import Login from './login'
 export default {
-  name: 'Header',
-  data: function () {
+    name: 'Header',
+    components:{
+        Login
+    },
+    data: function () {
     return {
 
     }

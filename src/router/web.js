@@ -12,7 +12,21 @@ export const Web = [
     path: '/web/news',
     name: 'p_news',
     component: () => import('@/views/web/news/index'),
-    meta: { type: 'web' }
+    meta: { type: 'web' },
+    children: [
+      {
+        path: '',
+        name: 'p_news_list',
+        component: () => import('@/views/web/news/list'),
+        meta: { type: 'web' },
+      },
+      {
+        path: 'info',
+        name: 'p_news_info',
+        component: () => import('@/views/web/news/detail'),
+        meta: { type: 'web' },
+      }
+    ]
   },
   {
     path: '/web/case',
@@ -54,6 +68,12 @@ export const Web = [
     path: '/web/report',
     name: 'p_report',
     component: () => import('@/views/web/report/index'),
+    meta: { type: 'web' }
+  },
+  {
+    path: '/web/mine',
+    name: 'p_mine',
+    component: () => import('@/views/web/mine/index'),
     meta: { type: 'web' }
   }
 ]

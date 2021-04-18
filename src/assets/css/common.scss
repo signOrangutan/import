@@ -14,3 +14,64 @@ $nav-active-color: #FD7D22;
 $nav-gap: 20px;
 
 $footer-bg-color: #F9FAFD;
+
+$font-sub-color: #666666;
+
+$content-bg-color: #F3F5F7;
+
+// 文字主题色
+.text-primary {
+    color: #FD7D22;
+}
+
+.bg-gray {
+    background-color: #f8f8f8;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+.max-container {
+    max-width: 1200px;
+}
+
+
+.bg-white {
+    background-color: #FFF;
+}
+
+.category-text {
+    @extend .font-size-14;
+}
+.category-bg-active {
+    background-color: #F8EBE6;
+}
+
+.category-text-active {
+    @extend .text-primary;
+    @extend .category-bg-active;
+}
+.category-title {
+    color: $font-sub-color;
+}
+
+.content-bg {
+    background-color: $content-bg-color;
+}
+
+.main-content {
+    @extend .max-container;
+    margin: 0 auto;
+}
+
+.service-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    color: #333;
+    line-height: 3;
+}
