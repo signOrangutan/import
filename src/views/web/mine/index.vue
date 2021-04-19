@@ -1,7 +1,7 @@
 <template>
     <!-- 个人中心 -->
     <div class='mine-page'>
-        <div class="mine-main d-flex">
+        <div class="mine-main mx-auto d-flex">
             <div class="mine-menu">
                 <div class="member-info d-flex" @click="handleSelect(0)">
                     <v-avatar class="avatar mr-3" color="orange" size="44">
@@ -176,7 +176,7 @@
 
             .content {
                 flex: 1;
-                padding: 40px 50px 0 50px;
+                padding: 40px 50px;
             }
         }
     }
