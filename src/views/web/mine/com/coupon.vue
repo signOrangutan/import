@@ -138,7 +138,7 @@
             }
             .expire {
                 &::after {
-                    background: url('../../../../assets/img/378.png') center/cover no-repeat;
+                    background: url('../../../../assets/img/312.png') center/cover no-repeat;
                 }
                 .content-header{
                     .amount {

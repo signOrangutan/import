@@ -32,7 +32,7 @@
                     <span>交易完成</span>
                     <div class="order-actions d-flex flex-column justify-center align-center" v-if="order.status==2">
                         <v-btn class="primary" small >开具发票</v-btn>
-                        <span class="review">去评价</span>
+                        <span class="review" @click="handleReview(order)">去评价</span>
                     </div>
                     <div class="order-actions" v-else>
                         <v-btn small>重新下单</v-btn>
@@ -58,13 +58,16 @@
                     {name: '待开票'},
                     {name: '发票历史'}
                 ],
-                orderList:[{status: 1},{status: 2}],
+                orderList:[{id: 1, status: 1},{id: 2, status: 2}],
                 current: 0
             }
         },
         methods: {
             handleClick: function(index){
                 this.current = index
+            },
+            handleReview: function(order){
+                this.$router.push({path:'/web/mine/review', query:{ action: 'add', orderId: order.id}})
             }
         }
     }

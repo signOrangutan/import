@@ -74,6 +74,43 @@ export const Web = [
     path: '/web/mine',
     name: 'p_mine',
     component: () => import('@/views/web/mine/index'),
-    meta: { type: 'web' }
+    meta: { type: 'web' },
+    children:[
+      {
+        path: '',
+        component: () => import('@/views/web/mine/com/user-info'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'userInfo',
+        component: () => import('@/views/web/mine/com/user-info'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'coupon',
+        component: () => import('@/views/web/mine/com/coupon'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'trade',
+        component: () => import('@/views/web/mine/com/trade'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'comment',
+        component: () => import('@/views/web/mine/com/comment/comment'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'review',
+        component: () => import('@/views/web/mine/com/comment/review'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'download',
+        component: () => import('@/views/web/mine/com/historyDownload'),
+        meta: { type: 'web' }
+      },
+    ]
   }
 ]

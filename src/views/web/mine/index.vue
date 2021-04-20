@@ -29,11 +29,12 @@
                 </div>
             </div>
             <div class="content">
-                <user-info v-if="current==0"></user-info>
+                <router-view></router-view>
+                <!-- <user-info v-if="current==0"></user-info>
                 <coupon v-else-if="current==2"></coupon>
                 <trade v-else-if="current==3"></trade>
                 <historyDownload v-else-if="current==4"></historyDownload>
-                <comment v-else-if="current==6"></comment>
+                <comment v-else-if="current==6"></comment> -->
             </div>
         </div>
     </div>
@@ -68,6 +69,27 @@
         methods: {
             handleSelect: function(index){
                 this.current = index
+                let uri = ''
+                switch(index){
+                    case 2:
+                        uri = 'coupon'
+                        break
+                    case 3:
+                        uri = 'trade'
+                        break
+                    case 4:
+                        uri = 'download'
+                        break
+                    case 6:
+                        uri = 'comment'
+                        break
+                    default:
+                        break
+                }
+
+                this.$router.push({
+                    path: `/web/mine/${uri}`
+                })
             }
         }
     }

@@ -40,7 +40,7 @@
         },
         methods: {
             handleClick: function(item){
-                console.log('>查看评价>>', item)
+                this.$router.push({path:'/web/mine/review', query:{ action: 'view', orderId: item.id}})
             }
         }
     }
@@ -56,17 +56,17 @@
                 &:not(:last-child) {
                     margin-bottom: 20px;
                 }
-                .comment-header {
-                    color: #333;
-                    padding-left: 20px;
-                    background-color: #F8FAFC;
-                    font-size: 16px;
-                    font-weight: 500;
-                    line-height: 2.8;
-                    .comment-date {
-                        margin-right: 5%;
-                    }
-                }
+                // .comment-header {
+                //     color: #333;
+                //     padding-left: 20px;
+                //     background-color: #F8FAFC;
+                //     font-size: 16px;
+                //     font-weight: 500;
+                //     line-height: 2.8;
+                //     .comment-date {
+                //         margin-right: 5%;
+                //     }
+                // }
                 .comment-content {
                     padding: 0 20px;
                     font-size: 14px;
