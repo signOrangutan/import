@@ -17,15 +17,12 @@
             <v-img 
                 max-height="497"
                 max-width="318"
+                width="6%"
                 src="../../../assets/img/287.png"
             >
             </v-img>
-            <div class="d-flex flex-column flex-grow-1">
-
-                <div class="mt-auto bg-gray font-size-14" style="line-height:4.6">
-                    <p class="mb-0 text-center">已有账号？<span class="text-primary">去登录</span></p>
-                </div>
-            </div>
+            <comForm></comForm>
+            
             
         </v-card>
         </v-dialog>
@@ -33,7 +30,11 @@
 </template>
 
 <script>
+    import comForm from './form'
     export default {
+        components:{
+            comForm
+        },
         data: function(){
             return {
                 dialog: false
@@ -54,10 +55,13 @@
 </script>
 <style lang='scss'>
     .com-login {
-
-        .login-footer {
-            background-color: #f8f8f8; 
-            border-radius:6px;
+        .v-card {
+            .form-box {
+                margin: 60px auto;
+                border: solid 1px red;
+            }
         }
+        
+        
     }
 </style>
