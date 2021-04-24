@@ -68,8 +68,9 @@
             </div>
 
             <!--注册登录 -->
-            <div v-else-if="type==0" class="base reg">
-                <p class="form-title text-center">注册登录</p>
+            <div v-else class="base reg">
+                <p class="form-title text-center" v-if="type==0">注册登录</p>
+                <p class="form-title text-center" v-else>忘记密码</p>
                 <div class="phone">
                     <span class="prefix">+86</span>
                     <input type="text" maxlength="11" placeholder="输入手机号码" />
@@ -81,7 +82,8 @@
                 <div class="pwd">
                     <input type="password" maxlength="30" placeholder="输入6-30位密码" />
                 </div>
-                <v-btn class="btn-login primary" @click="handleReg">注册账号</v-btn>
+                <v-btn class="btn-login primary" @click="handleReg" v-if="type==0">注册账号</v-btn>
+                <v-btn class="btn-login primary" @click="handleReg" v-else>确定</v-btn>
             </div>
         </div>
         
@@ -96,7 +98,7 @@
     export default {
         data: function(){
             return {
-                type: 3 // 0: 注册 1:手机验证码登录 2:账号密码 3: 微信登录
+                type: 4 // 0: 注册 1:手机验证码登录 2:账号密码 3: 微信登录
             }
         },
         methods: {
@@ -110,7 +112,7 @@
                 console.log('登录')
             },
             handleForgetPwd: function(){
-                console.log('忘记密码')
+                this.type = 4
             },
         }
         

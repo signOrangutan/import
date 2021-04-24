@@ -31,7 +31,7 @@
                     <span class="real-amount">￥40.00</span>
                     <span>交易完成</span>
                     <div class="order-actions d-flex flex-column justify-center align-center" v-if="order.status==2">
-                        <v-btn class="primary" small >开具发票</v-btn>
+                        <v-btn class="primary" small @click="applyInvoice(order)">开具发票</v-btn>
                         <span class="review" @click="handleReview(order)">去评价</span>
                     </div>
                     <div class="order-actions" v-else>
@@ -40,14 +40,62 @@
                 </div>
             </div>
         </div>
+        <report-dialog 
+            :dialog="dialog"
+            :maxWidth="480"
+            confirmTxt="申请开票" 
+            title="申请开票"
+            >
+            <div class="dialog-box">
+                <dl class="tip-info">
+                    <dt class="headr">开票须知 </dt>
+                    <dd>1.提交前请确认填写信息完整无误，已经开具的发票不可重开；</dd>
+                    <dd>2.增值税电子发票和纸质发票具有相同法律效力，均支持报销</dd>
+                    <dd>3.更多问题请咨询在线客服。</dd>
+                </dl>
+                <div class="form-box">
+                    <div class="item">
+                        <label class="label">发票金额</label>
+                        <div class="amount">¥ 30.00</div>
+                    </div>
+                    <div class="item">
+                        <label class="label">开具方式</label>
+                        <div class="item-radio select-radio">电子普通发票</div>
+                    </div>
+                    <div class="item">
+                        <label class="label">发票内容</label>
+                        <div class="item-radio">技术服务费</div>
+                    </div>
+                    <div class="item">
+                        <label class="label">发票类型</label>
+                        <div class="item-radio">企业</div>
+                        <div class="item-radio">个人</div>
+                    </div>
+                    <div class="item">
+                        <label class="label">发票抬头</label>
+                        <input class="item-input" type="text">
+                    </div>
+                    <div class="item">
+                        <label class="label">税号</label>
+                        <input class="item-input" type="text">
+                    </div>
+                    <div class="item">
+                        <label class="label">邮箱地址</label>
+                        <input class="item-input" type="text">
+                    </div>
+                </div>
+            </div>    
+        </report-dialog>
     </div>
 </template>
 
 <script>
+    import reportDialog from '@/components/common/report-dialog.vue'
     import tabs from '@/components/web/tabs/tabs'
     export default {
         components:{
-            tabs
+            tabs,
+            reportDialog
         },
         data: function(){
             return {
@@ -59,7 +107,9 @@
                     {name: '发票历史'}
                 ],
                 orderList:[{id: 1, status: 1},{id: 2, status: 2}],
-                current: 0
+                current: 0,
+                dialog: false
+
             }
         },
         methods: {
@@ -68,6 +118,9 @@
             },
             handleReview: function(order){
                 this.$router.push({path:'/web/mine/review', query:{ action: 'add', orderId: order.id}})
+            },
+            applyInvoice: function(order){
+                this.dialog = true
             }
         }
     }
@@ -121,5 +174,7 @@
                 }
             }
         }
+
+        
     }
 </style>

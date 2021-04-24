@@ -4,7 +4,7 @@
         <div class="header-left">
             <!-- logo -->
             <span class="logo"></span>
-            <p class="top-text">
+            <p class="top-text" v-if="!isReport">
                 <span class="content">让所有创业者平等</span>
                 <span class="content">享受高品质咨询服务</span>
             </p>
@@ -14,7 +14,8 @@
             <div class="header-content"></div>
         </slot>
         <div class="header-right">
-            <login></login>
+            <v-btn v-if="isReport" color="primary">在线客服</v-btn>
+            <login v-else></login>
         </div>
     </div>
 </template>
@@ -25,6 +26,12 @@ export default {
     name: 'Header',
     components:{
         Login
+    },
+    computed:{
+        isReport: function(){
+            let {path} = this.$route
+            return path.indexOf('/web/report/') > -1
+        }
     },
     data: function () {
     return {

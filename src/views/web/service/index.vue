@@ -47,9 +47,54 @@
         </div>
         <!-- form表单 -->
         <div class="form-container">
-            <div class="form-main text-center">
-                <p class="form-title">提交表单，行业咨询顾问一对一沟通</p>
-                <p class="form-title"> One to one communication with industry consultants</p>
+            <div class="form-main  text-center">
+                <p class="form-title mb-0">提交表单，行业咨询顾问一对一沟通</p>
+                <p class="sub-title"> One to one communication with industry consultants</p>
+                <ul class="form-content">
+                    <li class="item">
+                        <div class="item-input">
+                            <span class="label">*姓名</span>
+                            <input type="text" placeholder="(已加密)"/>
+                        </div>
+                        <div class="item-input">
+                            <span class="label">*电话</span>
+                            <input type="text" placeholder="(已加密)" />
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">*需要编写什么？（单选）</span>
+                        <div class="item-content">
+                            <div class="service-item"
+                                v-for="(targetItem, index) in target" :key="index"
+                                @click="handleTarget(targetItem)"
+                                :class="{'selected': targetId==targetItem.index}"
+                            >
+                                <span class="icon"></span>
+                                <span class="content">{{targetItem.title}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">*项目规模（单选）</span>
+                        <div class="item-content">
+                            <div class="service-item" 
+                                v-for="(scaleItem, index) in scale" :key="index"
+                                @click="handleScale(scaleItem)"
+                                :class="{'selected': scaleId==scaleItem.index}"
+                            >
+                                <span class="icon"></span>
+                                <span class="content">{{scaleItem.title}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">*行业</span>
+                        <div>
+                           <textarea class="item-textarea" placeholder="请输入"></textarea>
+                        </div>
+                    </li>
+                </ul>
+                <v-btn color="primary">立即提交</v-btn>
             </div>
         </div>
     </div>
@@ -116,7 +161,29 @@
                         title:'售后无忧,免费协议提供',
                         info: '30日售后期免费修改，全程公司监察部跟进；免费提供项目执行过程中的协议/合同。'
                     }
-                ]
+                ],
+                target: [
+                    {title:'编写商业计划书', index:1},
+                    {title:'编写可行性研究报告', index:2},
+                    {title:'编写资金申请报告', index:3},
+                    {title:'编写项目建议书', index:4},
+                ],
+                scale:[
+                    {title:'100万及以下', index:1},
+                    {title:'100万到500万', index:2},
+                    {title:'500万到1000万', index:3},
+                    {title:'1000万及以上', index:4},
+                ],
+                targetId: 1,
+                scaleId: 1
+            }
+        },
+        methods: {
+            handleTarget: function(target){
+                this.targetId = target.index
+            },
+            handleScale: function(scale){
+                this.scaleId = scale.index
             }
         }
     }
@@ -281,7 +348,6 @@
         }
         
         .service-step {
-
             .step-content {
                 margin-top: -30px;
                 .step-img {
@@ -293,8 +359,80 @@
             @extend .content-bg;
 
             .form-main {
-                @extend .max-container;
+                padding: 90px 0;
+                max-width: 900px;
+                margin: 0 auto;
+                .form-title {
+                    font-size: 42px;
+                }
+                .sub-title {
+                    font-size: 18px;
+                    color: $primary-color;
+                }
+                .form-content {
+                    list-style-type: none;
+                    
+                    .item {
+                        text-align: left;
+                        color: #666;
+                        line-height: 2.6;
+                        .label {
+                            font-size: 24px;
+                        }
+                        &:first-child{
+                            display: grid;
+                            grid-column-gap: 35px;
+                            grid-template-columns: repeat(2, 1fr);
+                            .item-input{
+                                border: 1px solid #707070;
+                                @extend .bg-white;
+                                border-radius: 4px;
+                                span{
+                                    text-align: left;
+                                }
+                                input {
+                                    outline: none;
+                                    width: 90%;
+                                    font-size: 16px;
+                                }
+                            }
+                            
+                        }
 
+                        .item-content{
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            grid-gap: 10px 6px;
+                            .service-item {
+                               
+                                
+                                .icon {
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    border: 1px solid gray;
+                                    vertical-align: middle;
+                                }
+                            }
+                            .selected {
+                                .icon {
+                                    border: 4px solid $primary-color;
+                                }
+                            }
+                        }
+                        .item-textarea {
+                                resize: none;
+                                width: 100%;
+                                height: 180px;
+                                border: 1px solid #707070;
+                                border-radius: 6px;
+                                @extend .bg-white;
+                                outline: none;
+                            }
+                    }
+                }
             }
         }
     }

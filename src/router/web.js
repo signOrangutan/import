@@ -68,7 +68,29 @@ export const Web = [
     path: '/web/report',
     name: 'p_report',
     component: () => import('@/views/web/report/index'),
-    meta: { type: 'web' }
+    meta: { type: 'web' },
+    children:[
+      {
+        path: '',
+        component: () => import('@/views/web/report/categroy'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'categroy',
+        component: () => import('@/views/web/report/categroy'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'company',
+        component: () => import('@/views/web/report/company'),
+        meta: { type: 'web' }
+      },
+      {
+        path: 'order',
+        component: () => import('@/views/web/report/order'),
+        meta: { type: 'web' }
+      }
+    ]
   },
   {
     path: '/web/mine',
