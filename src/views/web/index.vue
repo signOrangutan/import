@@ -13,7 +13,7 @@
               ></ReportHeader>
         </Header>
         <router-view />
-        <Footer></Footer>
+        <Footer v-if="!isReport"></Footer>
     </div>
 </template>
 

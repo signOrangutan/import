@@ -19,7 +19,7 @@
 <style lang='scss'>
     .report-page {
         .report-sub {
-            @extend .main-content;
+            // @extend .main-content;
             padding-top: 50px;
         }
     }

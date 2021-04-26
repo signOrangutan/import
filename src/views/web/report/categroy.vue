@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container mx-auto">
             <div class="main-container">
                 <div class="main-type">
                     <div 
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="types">
+        <div class="types mx-auto">
             <p class="header">
                 <span class="icon-before"></span>
                 <span class="content">主要行业</span>
@@ -167,7 +167,7 @@
                     justify-content: center;
                     line-height: 2.5;
                     .item-search {
-                        width: 70%;
+                        width: 60%;
                         background: #fff;
                         border-radius: 6px 0 0 6px;
                         outline: none;
@@ -223,6 +223,7 @@
             }
         }
         .container {
+            @extend .max-container;
             background-color: #F3F5F7;
             .main-container {
                 @extend .bg-white;
@@ -273,6 +274,7 @@
             }
         }
         .types {
+            @extend .max-container;
             text-align: center;
             .header {
                 .icon-before,.icon-after {
