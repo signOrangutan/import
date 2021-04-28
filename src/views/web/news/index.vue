@@ -3,7 +3,7 @@
     <div class='news-page'>
         <div class="news-main mx-auto">
             <!-- 分类导航 -->
-            <comCategory :current="current" @categoryClick="categoryClick"></comCategory>
+            <comCategory  :current="current" @categoryClick="categoryClick"></comCategory>
             <router-view />
         </div>
     </div>

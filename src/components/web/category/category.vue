@@ -61,6 +61,8 @@
 <style lang='scss'>
     .com-category {
         @extend .font-size-14;
+        line-height: 3;
+        padding: 20px 0;
     }
 
 </style>

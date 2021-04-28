@@ -19,6 +19,9 @@ import comCase from './coms/case'
 import comSalary from './coms/salary'
 import comNewCell from './coms/new-cell'
 import comAd from './coms/ad'
+
+import { home } from '@/assets/js/api'
+
 export default {
   components: {
     ComBanner,
@@ -31,7 +34,18 @@ export default {
   },
   data: function () {
     return {}
+  },
+  mounted: function(){
+    this.getHome()
+  },
+  methods: {
+    getHome: function(){
+      home().then(res=>{
+        console.log('>>>', res)
+      })
+    }
   }
+
 }
 </script>
 <style lang='scss'>
